@@ -1,21 +1,21 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Button } from "~/components/ui/button";
-import { cn } from "~/lib/utils";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowUpDown } from "lucide-react";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Payment = {
+export type Transaction = {
   id: string;
   date: string;
   amount: number;
   account: string;
-  notes: string;
+  notes?: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "date",
     header: ({ column }) => {

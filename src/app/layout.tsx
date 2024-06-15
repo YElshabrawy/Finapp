@@ -1,4 +1,4 @@
-import "~/styles/globals.css";
+import "@/styles/globals.css";
 
 import { Inter as FontSans } from "next/font/google";
 
@@ -7,8 +7,9 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-import { TRPCReactProvider } from "~/trpc/react";
-import { cn } from "~/lib/utils";
+import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
+import Providers from "@/components/Providers";
 
 export const metadata = {
   title: "Finapp",
@@ -29,7 +30,10 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
