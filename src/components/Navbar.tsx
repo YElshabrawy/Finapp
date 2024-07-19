@@ -1,15 +1,11 @@
-"use client";
-
-import { Button } from "./ui/button";
-import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
+import AuthBtn from "./AuthBtn";
 
 export default function Navbar() {
-  const { data: session } = useSession();
-  if (!session?.user) return <Button onClick={() => signIn()}>Login</Button>;
   return (
-    <div>
-      <Button onClick={() => signOut()}>Logout</Button>
-      <div>{session.user.email}</div>
+    <div className="flex items-center justify-between">
+      <Image src="/logo.png" alt="Logo" width={60} height={60} />
+      <AuthBtn />
     </div>
   );
 

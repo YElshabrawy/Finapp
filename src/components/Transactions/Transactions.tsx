@@ -30,7 +30,7 @@ async function getData(): Promise<Transaction[]> {
   ];
 }
 
-export default async function DemoPage() {
+export default async function Transactions() {
   const data = await getData();
 
   return (
